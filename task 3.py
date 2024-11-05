@@ -4,8 +4,12 @@ def count_letters(text:str):
     dict1={}
     for char in form_text:
         if char.isalpha():
-            dict1[char] = form_text.count(char) # если char буква, то идет запись в словарь
-    return dict1
+            if char in dict1:
+                dict1[char] += 1
+            else:
+                dict1[char] = 1
+            return dict1
+
 
 # TODO Напишите функцию calculate_frequency
 def calculate_frequency(letter_count: dict):
